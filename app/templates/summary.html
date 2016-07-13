@@ -5,14 +5,20 @@
     <h2>Summary</h2>
 
     <p>
-    {% with message = get_flashed_messages()  %}
-        {% if message %}
-            {% for summary in message %}
-                {{ summary }}
-                <br/>
-            {% endfor %}
+        {% if summary.success == True %}
+            {{ summary.summary }}
+        {% else %}
+            <span style="color:red;">Sorry, we were unable to summarize your text.</span>
         {% endif %}
-    {% endwith %}
+
     </p>
+
+    <h2>Source Text</h2>
+
+    <p>
+        {{ summary.source_text }}
+    </p>
+
+    <b>Compression Factor: </b> {{ summary.compression_factor }}
 
 {% endblock %}

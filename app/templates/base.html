@@ -11,6 +11,19 @@
     </head>
 
     <body style="width: 500px; margin: auto;">
+        <div>
+            {% with messages = get_flashed_messages()  %}
+                {% if messages %}
+                <b> Messages from the server: </b>
+                <ul>
+                    {% for message in messages %}
+                        <li> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+
         <header>
             <h1>
                 <a href="/index">Split Summarizer</a>
