@@ -1,47 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-    {% if title %}
-    {{ title }} |  SplitSummarizer
-    {% else %}
-    Welcome to SplitSummarizer
-    {% endif %}
-    </title>
-    <style type="text/css">
-    * {
-        font-family: "Helvetica", "Arial", sans-serif;
-        color: rgb(51, 51, 51);
-    }
+    <head>
+        <title>
+            {% if title %}
+                {{ title }} |  Split
+            {% else %}
+                Welcome to Split
+            {% endif %}
+        </title>
+    </head>
 
-    textarea
-    {
-        font-size: 1em;
-    }
-    </style>
-</head>
-<body style="margin:auto; width: 600px;">
-    <header>
-        <h1> SplitSummarizer </h1>
-        <br/>
-        <nav>
-            <a href="/index"> Home </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="/about"> About </a>
-        </nav>
-    </header>
-    
-    <br/><br/><br/>
+    <body style="width: 500px; margin: auto;">
+        <header>
+            <h1>
+                <a href="/index">Split Summarizer</a>
+            </h1>
+        </header>
 
-    <main style="width:500px; margin:auto;">
-        {% block content %}
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
 
-        {% endblock %}
-    </main>
+        <br/><br/><br/>
+        <hr/>
 
-    <br><br><br>
-    <footer>
-        <small>July 2016. Abhik Pal.</small>
-    </footer>
-</body>
+        <footer>
+            <span>July 2016. Abhik Pal.</span>
+        </footer>
+    </body>
 </html>

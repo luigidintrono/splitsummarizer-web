@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<b>Here is the summary:</b><br/>
+    <h2>Summary</h2>
 
-<p>
-{% with message = get_flashed_messages()  %}
-    {% if message %}
-        {% for summary in message %}
-            {{ summary }}
-            <br/>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-</p>
+    <p>
+    {% with message = get_flashed_messages()  %}
+        {% if message %}
+            {% for summary in message %}
+                {{ summary }}
+                <br/>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </p>
 
 {% endblock %}
