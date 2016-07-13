@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<b>Your text goes here:</b><br/>
-
-<textarea style="width: 100%; height: 400px; margin:auto;">
-    Hello World.
-</textarea>
-
-<form>
-<input type="submit" name="submit" value="Summarize">
-</form>
-
+<p>
+    <b>Your text goes here:</b><br/>
+    <form action="" method="post" name="summarizor">
+        {{form.hidden_tag()}}
+        {{ form.article_text(cols="80", rows="20") }}
+        
+        <input type=submit value="Publish">
+    </form>
+</p>
 {% endblock %}
