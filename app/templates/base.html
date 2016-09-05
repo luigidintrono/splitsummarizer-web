@@ -1,27 +1,24 @@
 {% extends "bootstrap/base.html" %}
 
 {% block title %}
-  {% if title %}
-    {{ title }} |  Split
-  {% else %}
-    Welcome to Split
-  {% endif %}
+  {% if title %}{{ title }} |  Split{% else %}Welcome to Split{% endif %}
 {% endblock %}
 
 {# Add legacy fixes. Use super() to not replace the header #}
 {% import "bootstrap/fixes.html" as fixes %}
-{% block head %}
-  {{ super() }}
-  {{ fixes.ie8() }}
-{% endblock %}
+{% block head %}{{ super() }}{{ fixes.ie8() }}{% endblock %}
 
-
-{% block navbar %}
-{{ nav.frontend_top.render() }}
-{% endblock %}
+{% block navbar %}{{ nav.frontend_top.render() }}{% endblock %}
 
 {% block content %}
-  {% block main_content %}{% endblock main_content %}
-<!-- Hello world -->
+  <div class="container">
+  {% block container %}{% endblock container %}
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <hr> Made by Abhik Pal for <i>Split</i>. Source available on
+      <a href="https://github.com/SplitSummarizer/splitsummarizer-web">Github.</a>  
+    </div>
+  </footer>
 {% endblock content %}
 

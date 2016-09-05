@@ -1,21 +1,17 @@
 {% extends "base.html" %}
-{% block main_content %}
-    <b>Please enter text here</b>
+{% block container %}
 
-    <br>
-    
-    <form   action=""
-            method="post"
-            name="spsum_main_text_grabber">
-    
-        {{ form.hidden_tag() }}
-        {{ form.source_text(cols="60", rows="25") }}
-    
-        <br>
-    
-        <input  type=submit
-                name="spsum_submit_text"
-                value="Summarize">
-    </form>
+<div class="page-header">
+    <h1>Welcome to Split</h1>
+    <p>We train machines to summarize your readings (so that you don't have to.</p>
+</div>
 
-{% endblock main_content %}
+<p>To get started, enter your text here.</p>
+
+<form action="" method="post" name="spsum_main_text_grabber">
+    {{ form.hidden_tag() }}
+    <p>{{ form.source_text(cols="80", rows="25") }}</p>
+    <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
+</form>
+
+{% endblock container %}

@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
-from flask_nav.elements import Navbar, View
+from flask_nav.elements import Navbar, Link
 
 nav = Nav()
 
@@ -9,8 +9,10 @@ nav = Nav()
 def frontend_top():
     return Navbar(
         'Split Summarizer',
-        View('Home', 'index'),
-    )
+        Link('Home', '/index/'),
+        Link('About', '/about/'),
+        Link('Contact', '/contact/')
+        )
 
 
 app = Flask(__name__)

@@ -1,24 +1,33 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block container %}
+<div class="page-header">
+<h1>We are done!</h1>
+  <p>
+    Our machine brains are still babies, we are working on them!
+    You can help us by signing up to test the alpha release. :)
+  </p>
+  <p>
+    Further down, we also show you the original text that was fed to
+    the internal sumamrization engine. Right now we are using a compression
+    factor of 3 i.e., we will try to make your text thrice as short. The next 
+    release will allow you to set this factor yourself.
+  </p>
+</div>
 
-    <h2>Summary</h2>
+{% if summary.success == True %}
+  <div class="page-header"><h2>Here is your summary</h2></div>
+  <p>{{ summary.summary }}</p>
+{% else %}
+  <div class="alert alert-danger" role="alert">
+    <strong>Oh snap!</strong> We were unable to summarize your text. If you copy
+    pasted your text from another souce, please remove non-ASCII characters and 
+    make sure that you have enough text volume.
+  </div>
+{% endif %}
 
-    <p>
-        {% if summary.success == True %}
-            {{ summary.summary }}
-        {% else %}
-            <span style="color:red;">Sorry, we were unable to summarize your text.</span>
-        {% endif %}
-
-    </p>
-
-    <h2>Source Text</h2>
-
-    <p>
-        {{ summary.source_text }}
-    </p>
-
-    <b>Compression Factor: </b> {{ summary.compression_factor }}
-
-{% endblock %}
+<div class="page-header">
+  <h2>Source Text</h2>
+</div>
+<p>{{ summary.source_text }}</p>
+{% endblock container %}
