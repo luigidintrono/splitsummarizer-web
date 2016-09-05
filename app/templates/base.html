@@ -1,45 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            {% if title %}
-                {{ title }} |  Split
-            {% else %}
-                Welcome to Split
-            {% endif %}
-        </title>
-    </head>
+{% extends "bootstrap/base.html" %}
 
-    <body style="width: 500px; margin: auto;">
-        <div>
-            {% with messages = get_flashed_messages()  %}
-                {% if messages %}
-                <b> Messages from the server: </b>
-                <ul>
-                    {% for message in messages %}
-                        <li> {{ message }} </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            {% endwith %}
-        </div>
+{% block title %}
+  {% if title %}
+    {{ title }} |  Split
+  {% else %}
+    Welcome to Split
+  {% endif %}
+{% endblock %}
 
-        <header>
-            <h1>
-                <a href="/index">Split Summarizer</a>
-            </h1>
-        </header>
+{# Add legacy fixes. Use super() to not replace the header #}
+{% import "bootstrap/fixes.html" as fixes %}
+{% block head %}
+  {{ super() }}
+  {{ fixes.ie8() }}
+{% endblock %}
 
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
 
-        <br/><br/><br/>
-        <hr/>
+{% block navbar %}
+{{ nav.frontend_top.render() }}
+{% endblock %}
 
-        <footer>
-            <span>July 2016. Abhik Pal.</span>
-        </footer>
-    </body>
-</html>
+{% block content %}
+  {% block main_content %}{% endblock main_content %}
+<!-- Hello world -->
+{% endblock content %}
+
