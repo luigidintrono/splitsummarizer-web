@@ -1,5 +1,10 @@
+# The virtual environment; we don't want this gitted.
 spsum/
+
 notes/
-*.pyc
 res/screencasts/abhikpal/
+
 *.sublime*
+*.pyc
+~*
+*~
