@@ -1,3 +1,2 @@
 WTF_CSRF_ENABLES = True
-SECRET_KEY = 'this-is-really-not-secure'
-BOOTSTRAP_SERVE_LOCAL=True
+SECRET_KEY='fx360I7uKd241wL07OQ8'
