@@ -1,22 +1,11 @@
-from flask_wtf import Form
-from wtforms import StringField
-from wtforms.widgets import TextArea
-from wtforms.validators import DataRequired
-
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer 
 from sumy.summarizers.lex_rank import LexRankSummarizer 
 
-class SourceTextGrabber(Form):
-    source_text = StringField(u'Text',
-                            validators=[DataRequired()],
-                            widget=TextArea())
-
-
-def get_summary(source_text, compression_factor):
+def get_summary(source_text, compression_factor=3):
     """
     Given some input source_text, returns its summary based on the chosen 
-    compression factor.
+    compression factor (defaults to 3).
     """
     summary = {
         'source_text': source_text,

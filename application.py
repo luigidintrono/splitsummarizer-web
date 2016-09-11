@@ -1,2 +1,2 @@
-from app import app
+from split import app
 app.run(host='0.0.0.0')
