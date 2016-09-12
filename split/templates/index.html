@@ -1,49 +1,59 @@
 {% extends "base.html" %}
-{% block content %}
-{% if summary %}
-    <div class="page-header">
-    <h1>We are done!</h1>
-      <p>
-        Our machine brains are still babies, we are working on them!
-        You can help us by signing up to test the alpha release. :)
-      </p>
-      <p>
-        Further down, we also show you the original text that was fed to
-        the internal sumamrization engine. Right now we are using a compression
-        factor of 3 i.e., we will try to make your text thrice as short. The next 
-        release will allow you to set this factor yourself.
-      </p>
-    </div>
+{%- block content -%}
+    {%- if summary -%}
+        {%- if summary.success == True -%}
+            <div class="page-header">
+                <h1>We are done!</h1>
+                <p>Our machine brains are still babies, we are working on them!
+                You can help us by signing up to test the alpha release. :)</p>
+                <p>We also show you the original text that was fed to the internal
+                sumamrization engine. Right now we are using a compression factor of 3
+                i.e., we will try to make your text thrice as short. The next release will
+                allow you to set this factor yourself.</p>
+            </div>
+        {%- else -%}
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> We were unable to summarize your text. If you copy
+                pasted your text from another souce, please remove non-ASCII characters and 
+                make sure that you have enough text volume.
+            </div>
+        {%- endif -%}
 
-    {% if summary.success == True %}
-      <div class="page-header"><h2>Here is your summary</h2></div>
-      <p>{{ summary.summary }}</p>
-    {% else %}
-      <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> We were unable to summarize your text. If you copy
-        pasted your text from another souce, please remove non-ASCII characters and 
-        make sure that you have enough text volume.
-      </div>
-    {% endif %}
-
-    <div class="page-header">
-      <h2>Source Text</h2>
-    </div>
-    <p>{{ summary.source_text }}</p>
-{% else %}
-<div class="page-header">
-    <h1>Welcome to Split</h1>
-    <p>We train machines to summarize your readings (so that you don't have to.</p>
-</div>
-
-<div class="row">
-    <p>To get started, enter your text here.</p>
-    <form action="" method="post" name="spsum_main_text_grabber">
-    <textarea name="source_text" cols="80" rows="40">
-        Enter your text here and we will try to summarize it!
-    </textarea><br>
-    <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
-    </form>
-</div>
-{% endif %}
-{% endblock content %}
+        {%- if summary.success == True -%}
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Source Text</h2>
+                <div class="well">
+                    <p>{{ summary.source_text }}</p>
+                </div>
+            </div>    
+            <div class="col-sm-6">
+                <h2>Summary</h2>
+                <p>{{ summary.summary }}</p>
+            </div>
+        </div>
+        {%- else -%}
+        <div class="row">
+            <h2>Source Text</h2>
+            <div class="col-sm-12 well">
+                {{ summary.source_text }}
+            </div>
+        </div>
+        {%- endif -%}
+    {%- else -%}
+        <div class="page-header">
+            <h1>Welcome to Split</h1>
+            <p>We train machines to summarize your readings (so that you don't have to.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p>To get started, enter your text here.</p>
+                <form action="" method="post" name="spsum_main_text_grabber">
+                    <textarea name="source_text" cols="80" rows="30"></textarea>
+                    <br>
+                    <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
+                </form>
+            </div>
+        </div>
+    {%- endif -%}
+{%- endblock content -%}
