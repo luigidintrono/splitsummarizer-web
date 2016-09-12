@@ -1,2 +1,3 @@
-from split import app
-app.run(host='0.0.0.0')
+from split import application
+application.debug == True
+application.run()

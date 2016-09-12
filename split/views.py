@@ -1,10 +1,10 @@
 from flask import render_template
 from flask import request
 
-from split import app
+from split import application
 import summarize
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         source_text = request.form['source_text']
