@@ -23,6 +23,8 @@
 
 #content {
   position:relative;
+  background:#080331;
+  background:linear-gradient(135deg, #080331, #673051);
 }
 
 #content:after {
