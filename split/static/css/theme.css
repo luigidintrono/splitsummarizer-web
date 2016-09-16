@@ -1,31 +1,19 @@
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-}
-
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
-
-.theme-showcase .navbar .container {
-  width: auto;
-}
-
 /* Sticky footer styles
 -------------------------------------------------- */
+
+body {
+  /* Move down content because we have a fixed navbar that is 50px tall */
+  padding-top: 50px;
+  padding-bottom: 20px;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
 }
 .footer {
   position: absolute;
@@ -36,6 +24,9 @@ body {
   background-color: #f5f5f5;
 }
 
+
+/* Custom page CSS
+-------------------------------------------------- */
 .container .text-muted {
   margin: 20px 0;
 }

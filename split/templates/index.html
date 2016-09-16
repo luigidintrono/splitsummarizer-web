@@ -1,16 +1,29 @@
 {% extends "base.html" %}
+{% block header %}
+<div class="bs-docs-masthead" id="content">
+    <div class="container">
+        <h1 class="home-title">Split</h1>
+        <p class="lead">We teach machines to read and summarize text. <sup>1</sup> </p>
+        <p class="lead">
+            <a href="/" class="btn btn-outline-inverse btn-lg">Try Now</a>
+        </p>
+        <p><sup>1</sup>&nbsp;Okay, we try. Our "machines" are still infants. </p>
+    </div>
+</div>
+{% endblock header%}
+
 {%- block content -%}
     {%- if summary -%}
         {%- if summary.success == True -%}
-            <div class="page-header">
-                <h1>We are done!</h1>
+            <section class="bs-docs-section">
+                <h1 class="page-header">We are done!</h1>
                 <p>Our machine brains are still babies, we are working on them!
                 You can help us by signing up to test the alpha release. :)</p>
                 <p>We also show you the original text that was fed to the internal
                 sumamrization engine. Right now we are using a compression factor of 3
                 i.e., we will try to make your text thrice as short. The next release will
                 allow you to set this factor yourself.</p>
-            </div>
+            </section>
         {%- else -%}
             <div class="alert alert-danger" role="alert">
                 <strong>Oh snap!</strong> We were unable to summarize your text. If you copy
@@ -41,19 +54,35 @@
         </div>
         {%- endif -%}
     {%- else -%}
-        <div class="page-header">
-            <h1>Welcome to Split</h1>
-            <p>We train machines to summarize your readings (so that you don't have to.</p>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <p>To get started, enter your text here.</p>
-                <form action="" method="post" name="spsum_main_text_grabber">
-                    <textarea name="source_text" cols="80" rows="30"></textarea>
-                    <br>
-                    <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
-                </form>
-            </div>
-        </div>
+    <section class="bs-docs-section">
+        <p>To get started, enter your text here.</p>
+        <form action="" method="post" name="spsum_main_text_grabber">
+            <textarea name="source_text" cols="80" rows="30"></textarea>
+            <br>
+            <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
+        </form>
+    </section>
     {%- endif -%}
 {%- endblock content -%}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block headerscripts %}    
+{# <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script> #}
+<script src="/static/js/trianglify.min.js"></script>
+<script>
+    var masthead = document.getElementById('content');
+    var dimensions = masthead.getClientRects()[0];
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        variance: 1.0,
+        cell_size: 100,
+        x_colors: ['#050030', '#CC4497'],
+        y_colors: 'match_x',
+        color_function: false
+    });
+    masthead.style['background-image'] = 'url(' + pattern.png() + ')';
+</script>
+{% endblock headerscripts%}
