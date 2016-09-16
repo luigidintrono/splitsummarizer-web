@@ -3,9 +3,9 @@
 <div class="bs-docs-masthead" id="content">
     <div class="container">
         <h1 class="home-title">Split</h1>
-        <p class="lead">We teach machines to read and summarize text. <sup>1</sup> </p>
+        <p class="lead">We teach machines to read and summarize text.<sup>1</sup> </p>
         <p class="lead">
-            <a href="/" class="btn btn-outline-inverse btn-lg">Try Now</a>
+            <a href="/summarize/" class="btn btn-outline-inverse btn-lg">Try Now</a>
         </p>
         <p><sup>1</sup>&nbsp;Okay, we try. Our "machines" are still infants. </p>
     </div>
@@ -13,60 +13,22 @@
 {% endblock header%}
 
 {%- block content -%}
-    {%- if summary -%}
-        {%- if summary.success == True -%}
-            <section class="bs-docs-section">
-                <h1 class="page-header">We are done!</h1>
-                <p>Our machine brains are still babies, we are working on them!
-                You can help us by signing up to test the alpha release. :)</p>
-                <p>We also show you the original text that was fed to the internal
-                sumamrization engine. Right now we are using a compression factor of 3
-                i.e., we will try to make your text thrice as short. The next release will
-                allow you to set this factor yourself.</p>
-            </section>
-        {%- else -%}
-            <div class="alert alert-danger" role="alert">
-                <strong>Oh snap!</strong> We were unable to summarize your text. If you copy
-                pasted your text from another souce, please remove non-ASCII characters and 
-                make sure that you have enough text volume.
-            </div>
-        {%- endif -%}
+<section class="bs-docs-section">
+    <h1 class="page-header">About</h1>
+    <p><i>Split</i> is a web applicaiton that helps you summarize text. Our natural language
+    processing algorithms take your text, identify the key ideas, then return a subset of
+    the sentences that relate closely to those key ideas. Right now we are using a 
+    "compression factor" of three i.e., we try to make the input text thrice as short.</p>
 
-        {%- if summary.success == True -%}
-        <div class="row">
-            <div class="col-sm-6">
-                <h2>Source Text</h2>
-                <div class="well">
-                    <p>{{ summary.source_text }}</p>
-                </div>
-            </div>    
-            <div class="col-sm-6">
-                <h2>Summary</h2>
-                <p>{{ summary.summary }}</p>
-            </div>
-        </div>
-        {%- else -%}
-        <div class="row">
-            <h2>Source Text</h2>
-            <div class="col-sm-12 well">
-                {{ summary.source_text }}
-            </div>
-        </div>
-        {%- endif -%}
-    {%- else -%}
-    <section class="bs-docs-section">
-        <p>To get started, enter your text here.</p>
-        <form action="" method="post" name="spsum_main_text_grabber">
-            <textarea name="source_text" cols="80" rows="30"></textarea>
-            <br>
-            <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
-        </form>
-    </section>
-    {%- endif -%}
+    <p>We are still in alpha, and this is a bare bones working prototype. If you find a bug
+    of sorts, please use the <a href="/contact/">contact page</a> to let us know. You can also
+    identify issues on the <a href="https://github.com/SplitSummarizer/splitsummarizer-web">GitHub
+    </a> page for this project.</p>
+
+    <p>You can try out (baby?) <i>Split</i> by navigating to the <a href="/summarize/">Summarize</a> page.
+    </p>
+</section>
 {%- endblock content -%}
-
-{% block sidebar %}
-{% endblock sidebar %}
 
 {% block headerscripts %}    
 {# <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script> #}

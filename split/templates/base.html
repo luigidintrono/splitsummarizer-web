@@ -53,12 +53,12 @@
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li> <a href="/">Summarize</a></li>
+                    <li> <a href="/summarize/">Summarize</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -79,11 +79,7 @@
             <!-- SIDEBAR -->
             <div class="col-md-3" role="complementary">
                 <div class="bs-docs-sidebar hidden-print">
-                    {% block sidebar %}    
-                    <ul class="nav bs-docs-sidenav"></ul>
-                    <a class="back-to-top" href="#top">
-                        <i class="glyphicon glyphicon-chevron-up"></i> Back to top
-                    </a>
+                    {% block sidebar %}
                     {% endblock sidebar %}
                 </div>
             </div>

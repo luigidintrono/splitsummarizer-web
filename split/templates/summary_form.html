@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{%- block content -%}
+<section class="bs-docs-section">
+    <h2>Summarize!</h2>
+    <p>We are still in alpha. The system goes haywire if the text contains
+    non-ASCII characters. Please clean your text manually before clicking summarize.</p>
+    <form action="" method="post" name="spsum_main_text_grabber">
+        <textarea name="source_text" cols="80" rows="30"></textarea>
+        <br>
+        <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
+    </form>
+</section>
+{%- endblock content -%}
