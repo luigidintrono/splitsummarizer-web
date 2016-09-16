@@ -1,3 +1,4 @@
+from flask import abort
 from flask import render_template
 from flask import request
 
@@ -22,3 +23,6 @@ def summarizer():
 def about():
     return render_template("index.html", title="About")
 
+@application.route('/contact/')
+def contact():
+    return render_template("contact.html", title="Contact us")
