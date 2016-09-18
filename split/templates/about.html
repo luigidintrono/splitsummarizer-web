@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block header %}
+<div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>About</h1>
+        <p >How we (try to) summarize text. And other things about our baby machine brains.</p>
+    </div>
+</div>
+{% endblock header%}
+
+{%- block content -%}
+<section class="bs-docs-section">
+    <h1 class="page-header">The Big-Picture</h1>
+    <p><i>Split</i> is a web applicaiton that helps you summarize text. Our natural language
+    processing algorithms take your text, identify the key ideas, then return a subset of
+    the sentences that relate closely to those key ideas. Right now we are using a 
+    "compression factor" of three i.e., we try to make the input text thrice as short.</p>
+
+    <p>We are still in alpha, and this is a bare bones working prototype. If you find a bug
+    of sorts, please use the <a href="/contact/">contact page</a> to let us know. You can also
+    identify issues on the <a href="https://github.com/SplitSummarizer/splitsummarizer-web">GitHub
+    </a> page for this project.</p>
+
+    <p>You can try out (baby?) <i>Split</i> by navigating to the <a href="/summarize/">Summarize</a> page.
+    </p>
+</section>
+{%- endblock content -%}

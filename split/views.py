@@ -21,7 +21,7 @@ def summarizer():
 
 @application.route('/about/')
 def about():
-    return render_template("index.html", title="About")
+    return render_template("about.html", title="About")
 
 @application.route('/contact/')
 def contact():
