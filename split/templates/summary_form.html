@@ -1,13 +1,23 @@
 {% extends "base.html" %}
+{% block header %}
+    <div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>Summarize text</h1>
+        <p >Non-fiction prose works best, but we won't stop you from being amused by summaries of short stories</p>
+    </div>
+</div>
+{% endblock %}
+
 {%- block content -%}
-<section class="bs-docs-section">
-    <h2>Summarize!</h2>
-    <p>We are still in alpha. The system goes haywire if the text contains
-    non-ASCII characters. Please clean your text manually before clicking summarize.</p>
-    <form action="" method="post" name="spsum_main_text_grabber">
-        <textarea name="source_text" cols="80" rows="30"></textarea>
-        <br>
-        <input class="btn btn-lg btn-primary center" type="submit" name="spsum_submit_text" value="Summarize">
+<section class="bs-docs-section" id="summarizer">
+    <form action="/summarize/" method="post">
+        <div class="form-group">
+            <label for="summarizer-source-text">Copy-Paste your text below to get started.</label>
+            <textarea class="form-control" id="summarizer-source-text" rows="20" style="resize:vertical;" name="source_text"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-lg btn-primary center" type="submit" value="Summarize">
+        </div>
     </form>
 </section>
 {%- endblock content -%}

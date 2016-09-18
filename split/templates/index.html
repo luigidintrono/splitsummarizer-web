@@ -5,7 +5,7 @@
         <h1 class="home-title">Split</h1>
         <p class="lead">We teach machines to read and summarize text.<sup>1</sup> </p>
         <p class="lead">
-            <a href="/summarize/" class="btn btn-outline-inverse btn-lg">Try Now</a>
+            <a href="#summarizer" class="btn btn-outline-inverse btn-lg">Try Now</a>
         </p>
         <p><sup>1</sup>&nbsp;Okay, we try. Our "machines" are still infants. </p>
     </div>
@@ -13,20 +13,18 @@
 {% endblock header%}
 
 {%- block content -%}
-<section class="bs-docs-section">
-    <h1 class="page-header">About</h1>
-    <p><i>Split</i> is a web applicaiton that helps you summarize text. Our natural language
-    processing algorithms take your text, identify the key ideas, then return a subset of
-    the sentences that relate closely to those key ideas. Right now we are using a 
-    "compression factor" of three i.e., we try to make the input text thrice as short.</p>
-
-    <p>We are still in alpha, and this is a bare bones working prototype. If you find a bug
-    of sorts, please use the <a href="/contact/">contact page</a> to let us know. You can also
-    identify issues on the <a href="https://github.com/SplitSummarizer/splitsummarizer-web">GitHub
-    </a> page for this project.</p>
-
-    <p>You can try out (baby?) <i>Split</i> by navigating to the <a href="/summarize/">Summarize</a> page.
-    </p>
+<section class="bs-docs-section" id="summarizer">
+    <h1 class="page-header">Summarize text</h1>
+    <p class="lead">Non-fiction prose works best, but we won't stop you from being amused by summaries of short stories.</p>
+    <form action="/summarize/" method="post">
+        <div class="form-group">
+            <label for="summarizer-source-text">Copy-Paste your text below to get started.</label>
+            <textarea class="form-control" id="summarizer-source-text" rows="20" style="resize:vertical;" name="source_text"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-lg btn-primary center" type="submit" value="Summarize">
+        </div>
+    </form>
 </section>
 {%- endblock content -%}
 
