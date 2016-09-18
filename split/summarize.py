@@ -18,12 +18,10 @@ def get_summary(source_text, compression_factor=3):
     summ_algo = LexRankSummarizer()
     final_line_num = \
         int(source_text.count('.')/compression_factor)
-    try:
-        raw_summary = summ_algo(parser.document, final_line_num)
-        for sentence in raw_summary:
-            summary['summary'] += str(sentence) + ' '
-    except:
-        pass
+
+    raw_summary = summ_algo(parser.document, final_line_num)
+    for sentence in raw_summary:
+        summary['summary'] += (str(sentence) + str(' ')).decode('utf-8')
 
     summary['success'] = (len(summary['summary']) != 0)
 
