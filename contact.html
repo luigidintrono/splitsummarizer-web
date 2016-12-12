@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="Split" content="">
+    <link rel="icon" href="img/logo.png">
+
+    <title>Split | Contact</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="css/contact.css" rel="stylesheet">
+
+<!--Google Analytics Code-->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79829573-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <body style="background:url(img/contact.jpg);">
+
+  <!-- Nav Bar -->
+    <nav class="navbar navbar-static-top navbar-light" id="navbar"> 
+      <a href="#" class="navbar-brand"><img class="image-fluid" src="img/logo.png" width="30"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="sum.html">Summarizer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+       <a href="#" class="navbar-brand pull-sm-right m-r-0"><img class="image-fluid pull-sm-right m-r-0 hidden-xs-down" src="img/jname.png" width="70"></a>
+    </nav>
+
+<form  class="m-a-3" id="contact-form" method="post" action="contact.php" role="form">
+
+  <!-- Start Form -->   
+
+    <div class="messages"></div>
+    <div class="controls col-md-6" color="white">
+        <div class="row">
+            <div class="">
+                <div class="form-group">
+                    <label for="form_name">Full Name</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="co">
+                <div class="form-group">
+                    <label for="form_email">Email</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="">
+                <div class="form-group">
+                    <label for="form_message">Message</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Share your opinion with us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-12 p-t-1">
+                <input type="submit" class="btn btn-lg btn-primary m-y-2 center-block btn-success btn-send" value="Send message" id="button">
+            </div>
+        </div>
+    </div>
+<!-- End Form -->
+
+<!-- Image -->
+    <div class="m-x-4 ">
+        <img class="img-fluid center-block" src="img/contact.png" width="300">
+    </div>
+</form>
+
+<!-- FOOTER -->
+<footer id="footer" class="col-lg-12 p-a-3" item-width="100">
+<div class="row text-muted text-xs-center">
+  <div class="col-md-4">
+    <p><img class="m-t-1" src="img/name.png" width="100"></p>
+    <p>Do not lose the meaning</p>
+  </div>
+  <div class="col-md-4 text-xs-center">
+    <p><strong>Be always first. Sign up for alpha testing</strong></p>
+    <div class="input-group text-xs-center">
+      <input type="text" class="form-control" placeholder="Email">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" id="button3">Sign up</button>
+      </span>
+    </div>
+  </div>
+    <div class="col-md-4 text-xs-center m-y-1" id="conterm">
+  <h6><p><a href="#">Privacy</a></p></h6>
+  <h6><a href="#">Terms</a></h6>
+  </div>
+</div>
+<h6><p class="text-xs-center">&copy; 2016 Split, Inc. </p></h6>
+<div class="row">
+<div class="col-md-12 text-xs-center center-block m-t-1">
+<a href="#" class=" m-r-0"> 
+          <img class="img-circle image-fluid m-r-1" id="link" src="img/f-font.png" width="30"></a>
+<a href="#" class="m-r-0"> 
+          <img class="img-circle image-fluid m-r-1" id="link" src="img/Linkedin.png" width="30"></a>
+<a href="#" class="m-r-0"> 
+          <img class="img-circle image-fluid m-r-1" id="link" src="img/gogo.png" width="30"></a>
+</div>
+</div>
+</footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </body>
+</html>
